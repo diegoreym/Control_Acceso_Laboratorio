@@ -58,7 +58,7 @@ class UIAutorizaciones:
                     if cod_a and cod_b:
                         resultados = self.sistema.comparar_autorizaciones(cod_a, cod_b)
                         print(f"\n--- COMPARACIÓN MATEMÁTICA DE SETS ---")
-                        print(f"Persona A ({cod_a}): {resultados['union'] if not resultados['diferencia_b_a'] else '...'} ") 
+                        print(f"Comparando accesos: {cod_a} vs {cod_b}")
                         print(f"Unión (A | B)        : {resultados['union']}")
                         print(f"Intersección (A & B) : {resultados['interseccion']}")
                         print(f"Diferencia (A - B)   : {resultados['diferencia_a_b']}")
