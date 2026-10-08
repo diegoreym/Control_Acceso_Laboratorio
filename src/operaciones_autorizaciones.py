@@ -45,5 +45,6 @@ def comparar_autorizaciones(personas: dict, cod_persona_a: str, cod_persona_b: s
         "union": set_a | set_b,
         "interseccion": set_a & set_b,
         "diferencia_a_b": set_a - set_b,
-        "diferencia_b_a": set_b - set_a
+        "diferencia_b_a": set_b - set_a,
+        "diferencia_simetrica": set_a ^ set_b
     }
