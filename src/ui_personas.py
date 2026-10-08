@@ -1,10 +1,4 @@
-from __future__ import annotations
-
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from sistema_acceso import SistemaAcceso
-
+from sistema_acceso import SistemaAcceso
 
 class UIPersonas:
     def __init__(self, sistema: SistemaAcceso) -> None:
@@ -84,9 +78,15 @@ class UIPersonas:
 
 
 if __name__ == "__main__":
-    from sistema_acceso import SistemaAcceso
-    from datos_demo import cargar_datos_demo
+
+    try:
+        from datos_demo import cargar_datos_demo
+    except ImportError:
+        cargar_datos_demo = None
 
     sistema = SistemaAcceso()
-    cargar_datos_demo(sistema)
+    if cargar_datos_demo is not None:
+        cargar_datos_demo(sistema)
+    else:
+        print("Iniciando con sistema vacío (datos de demostración no disponibles).")
     UIPersonas(sistema).ejecutar()
