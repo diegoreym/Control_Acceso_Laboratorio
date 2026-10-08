@@ -7,7 +7,7 @@ except ImportError:
 
 class UIAutorizaciones:
     def __init__(self, sistema: SistemaAcceso) -> None:
-        # Contrato común: el constructor recibe un SistemaAcceso existente y lo guarda[cite: 17]
+     
         self.sistema = sistema
 
     def leer_codigo(self, mensaje: str) -> str:
@@ -63,12 +63,12 @@ class UIAutorizaciones:
                         print(f"Intersección (A & B) : {resultados['interseccion']}")
                         print(f"Diferencia (A - B)   : {resultados['diferencia_a_b']}")
                         print(f"Diferencia (B - A)   : {resultados['diferencia_b_a']}")
-
+                        print(f"Dif. Simétrica (A ^ B) : {resultados['diferencia_simetrica']}")
                 elif opcion == "0":
                     print("Cerrando submenú de autorizaciones...")
                     return
                 else:
-                    print("❌ Opción inválida. Ingrese un número del 0 al 4.")
+                    print(" Opción inválida. Ingrese un número del 0 al 4.")
 
            
             except KeyError as error:
