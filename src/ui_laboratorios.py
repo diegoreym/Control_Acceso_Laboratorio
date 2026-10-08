@@ -87,3 +87,4 @@ if __name__ == "__main__":
     sistema = SistemaAcceso()
     cargar_datos_demo(sistema)
     UILaboratorios(sistema).ejecutar()
+
