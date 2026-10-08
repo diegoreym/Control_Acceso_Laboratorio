@@ -1,0 +1,1 @@
+# Marca la carpeta tests como paquete para unittest discover.

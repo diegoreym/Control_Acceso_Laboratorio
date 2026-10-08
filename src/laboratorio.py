@@ -1,13 +1,7 @@
 class Laboratorio:
 
-    def __init__(
-        self,
-        codigo: str,
-        nombre: str,
-        capacidad: int,
-        pabellon: str
-    ) -> None:
-        # Validar código
+    def __init__(self, codigo: str, nombre: str, capacidad: int, pabellon: str ) -> None:
+        # Validar codigo
         if not isinstance(codigo, str) or not codigo.strip():
             raise ValueError("El codigo debe ser un texto no vacio")
 
@@ -20,12 +14,10 @@ class Laboratorio:
 
     @property
     def codigo(self) -> str:
-        """Retorna el codigo del laboratorio."""
         return self.__codigo
 
     @property
     def nombre(self) -> str:
-        """Retorna el nombre del laboratorio."""
         return self.__nombre
 
     @nombre.setter
@@ -37,7 +29,6 @@ class Laboratorio:
 
     @property
     def capacidad(self) -> int:
-        """Retorna la capacidad maxima del laboratorio."""
         return self.__capacidad
 
     @capacidad.setter
@@ -52,7 +43,6 @@ class Laboratorio:
 
     @property
     def pabellon(self) -> str:
-        """Retorna el pabellon donde se encuentra el laboratorio."""
         return self.__pabellon
 
     @pabellon.setter

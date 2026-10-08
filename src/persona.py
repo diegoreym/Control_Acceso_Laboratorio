@@ -14,12 +14,10 @@ class Persona:
 
     @property
     def codigo(self) -> str:
-        """Retorna el codigo de la persona."""
         return self.__codigo
 
     @property
     def apellidos(self) -> str:
-        """Retorna los apellidos de la persona."""
         return self.__apellidos
 
     @apellidos.setter
@@ -31,7 +29,6 @@ class Persona:
 
     @property
     def nombres(self) -> str:
-        """Retorna los nombres de la persona."""
         return self.__nombres
 
     @nombres.setter
@@ -43,19 +40,15 @@ class Persona:
 
     @property
     def laboratorios_autorizados(self) -> set[str]:
-        """Retorna una copia de los laboratorios autorizados."""
         return self.__laboratorios_autorizados.copy()
 
     def agregar_laboratorio(self, codigo_laboratorio: str) -> None:
-        """Agrega un laboratorio al conjunto de autorizaciones."""
         self.__laboratorios_autorizados.add(codigo_laboratorio)
 
     def retirar_laboratorio(self, codigo_laboratorio: str) -> None:
-        """Retira un laboratorio del conjunto de autorizaciones."""
         self.__laboratorios_autorizados.discard(codigo_laboratorio)
 
     def tiene_laboratorio(self, codigo_laboratorio: str) -> bool:
-        """Indica si la persona tiene autorizado un laboratorio."""
         return codigo_laboratorio in self.__laboratorios_autorizados
 
     def __str__(self) -> str:
