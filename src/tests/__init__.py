@@ -1,2 +1,4 @@
+conjunto = {}
 
-#init
+estado = len(conjunto)==0
+print (estado)
