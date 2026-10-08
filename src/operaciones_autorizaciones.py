@@ -1,4 +1,7 @@
-def autorizar_laboratorio(personas: dict, laboratorios: dict, cod_persona: str, cod_lab: str) -> None:
+from persona import Persona
+from laboratorio import Laboratorio
+
+def autorizar_laboratorio(personas: dict[str, Persona], laboratorios: dict[str, Laboratorio], cod_persona: str, cod_lab: str) -> None:
     if cod_persona not in personas:
         raise KeyError(f"La persona con código {cod_persona} no está registrada.")
     if cod_lab not in laboratorios:
@@ -12,7 +15,7 @@ def autorizar_laboratorio(personas: dict, laboratorios: dict, cod_persona: str, 
     persona.agregar_laboratorio(cod_lab)
 
 
-def revocar_autorizacion(personas: dict, laboratorios: dict, cod_persona: str, cod_lab: str) -> None:
+def revocar_autorizacion(personas: dict[str, Persona], laboratorios: dict[str, Laboratorio], cod_persona: str, cod_lab: str) -> None:
     if cod_persona not in personas:
         raise KeyError(f"La persona con código {cod_persona} no está registrada.")
     if cod_lab not in laboratorios:
@@ -26,7 +29,7 @@ def revocar_autorizacion(personas: dict, laboratorios: dict, cod_persona: str, c
     persona.retirar_laboratorio(cod_lab)
 
 
-def puede_acceder(personas: dict, laboratorios: dict, cod_persona: str, cod_lab: str) -> bool:
+def puede_acceder(personas: dict[str, Persona], laboratorios: dict[str, Laboratorio], cod_persona: str, cod_lab: str) -> bool:
     if cod_persona not in personas:
         raise KeyError(f"La persona con código {cod_persona} no está registrada.")
     if cod_lab not in laboratorios:
@@ -34,7 +37,7 @@ def puede_acceder(personas: dict, laboratorios: dict, cod_persona: str, cod_lab:
     return personas[cod_persona].tiene_laboratorio(cod_lab)
 
 
-def comparar_autorizaciones(personas: dict, cod_persona_a: str, cod_persona_b: str) -> dict:
+def comparar_autorizaciones(personas: dict[str, Persona], cod_persona_a: str, cod_persona_b: str) -> dict:
     if cod_persona_a not in personas:
         raise KeyError(f"La persona {cod_persona_a} no está registrada.")
     if cod_persona_b not in personas:
