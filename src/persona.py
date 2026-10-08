@@ -1,11 +1,6 @@
 class Persona:
 
-    def __init__(
-        self,
-        codigo: str,
-        apellidos: str,
-        nombres: str
-    ) -> None:
+    def __init__(self,codigo: str,apellidos: str,nombres: str) -> None:
         if not isinstance(codigo, str) or not codigo.strip():
             raise ValueError("El codigo debe ser un texto no vacio")
 
