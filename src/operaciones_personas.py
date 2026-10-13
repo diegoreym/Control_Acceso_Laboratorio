@@ -55,7 +55,7 @@ def eliminar_persona(personas: dict[str, Persona], codigo: str) -> None:
     codigo = _normalizar_codigo(codigo)
     if codigo not in personas:
         raise KeyError(f"La persona con código {codigo} no está registrada.")
-    del personas[codigo]
+    del personas[codigo] 
 
 
 def listar_personas(personas: dict[str, Persona]) -> list[Persona]:

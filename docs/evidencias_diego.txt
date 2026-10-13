@@ -1,0 +1,25 @@
+EVIDENCIAS DE DIEGO - MAP DE PERSONAS
+Permisos preparados mediante Persona; no se valida aquí el catálogo de laboratorios.
+Estado inicial: {"P001": {"apellidos": "Pérez", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Juan"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}}
+PER-08/PER-18: P001 y P002 son objetos distintos: True
+PER-18: modificar permisos de P001 conserva los de P002: True
+
+PER-14: registro y eliminación de P003
+Antes: {"P001": {"apellidos": "Pérez", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Juan"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}}
+Después de registrar P003: {"P001": {"apellidos": "Pérez", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Juan"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}, "P003": {"apellidos": "Torres", "autorizaciones": [], "nombres": "Diego"}}
+Después de eliminar P003: {"P001": {"apellidos": "Pérez", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Juan"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}}
+P001 y P002 conservaron datos y permisos: True
+
+PER-11: modificación válida de P001
+Antes: {"P001": {"apellidos": "Pérez", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Juan"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}}
+Después: {"P001": {"apellidos": "Rojas", "autorizaciones": ["LAB01", "LAB02", "LAB03"], "nombres": "Luis"}, "P002": {"apellidos": "Gómez", "autorizaciones": ["LAB02", "LAB03", "LAB05"], "nombres": "Ana"}}
+Se conserva el mismo objeto: True
+Se conservan el código y los permisos: True
+
+PER-05/PER-12/PER-16: errores sin efectos secundarios
+PER-05 duplicado: ValueError: La persona con código P001 ya está registrada.
+Estado anterior igual al posterior: True
+PER-12 nombres vacíos: ValueError: Los nombres deben ser un texto no vacío.
+Estado anterior igual al posterior: True
+PER-16 eliminación inexistente: KeyError: La persona con código P999 no está registrada.
+Estado anterior igual al posterior: True
